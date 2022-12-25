@@ -17,9 +17,10 @@ CROSS_COMPILE=aarch64-none-linux-gnu-
 
 define AESD_ASSIGNMENTS_BUILD_CMDS
 echo "-----------------------------------------------------------------------"
+ls /home
 echo $(PATH)
 echo "-----------------------------------------------------------------------"
-/home/sachin/coursera/gcc-arm-10.2-2020.11-x86_64-aarch64-none-linux-gnu/bin/$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/finder-app CROSS_COMPILE=$(CROSS_COMPILE) all
+$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/finder-app CROSS_COMPILE=$(CROSS_COMPILE) all
 endef
 
 # TODO add your writer, finder and finder-test utilities/scripts to the installation steps below
