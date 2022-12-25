@@ -13,13 +13,13 @@ AESD_ASSIGNMENTS_VERSION = '7f5b580a53fad9f8921100638c3403443290f2f8'
 AESD_ASSIGNMENTS_SITE = 'git@github.com:cu-ecen-aeld/assignments-3-and-later-sachinkp21587.git'
 AESD_ASSIGNMENTS_SITE_METHOD = git
 AESD_ASSIGNMENTS_GIT_SUBMODULES = YES
-CROSS_COMPILE=/home/sachin/coursera/gcc-arm-10.2-2020.11-x86_64-aarch64-none-linux-gnu/bin/aarch64-none-linux-gnu-
+CROSS_COMPILE=aarch64-none-linux-gnu-
 
 define AESD_ASSIGNMENTS_BUILD_CMDS
 echo "-----------------------------------------------------------------------"
 echo $(PATH)
 echo "-----------------------------------------------------------------------"
-$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/finder-app CROSS_COMPILE=$(CROSS_COMPILE) all
+/home/sachin/coursera/gcc-arm-10.2-2020.11-x86_64-aarch64-none-linux-gnu/bin/$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/finder-app CROSS_COMPILE=$(CROSS_COMPILE) all
 endef
 
 # TODO add your writer, finder and finder-test utilities/scripts to the installation steps below
